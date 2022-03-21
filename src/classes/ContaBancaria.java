@@ -76,7 +76,7 @@ public class ContaBancaria {
     }
 
     public void fecharConta() {
-        if (getStatusConta() == true) {
+        if (getStatusConta()) {
             if (getSaldoConta() > 0) {
                 System.out.println("Você não pode encerrar sua conta! Ainda tem saldo na mesma!");
             } else if (getSaldoConta() < 0) {
@@ -91,7 +91,7 @@ public class ContaBancaria {
     }
 
     public void depositar(double valorDeposito) {
-        if (getStatusConta() == true) {
+        if (getStatusConta()) {
             setSaldoConta(getSaldoConta() + valorDeposito);
         } else {
             System.out.println("Você precisa criar uma conta.");
@@ -99,7 +99,7 @@ public class ContaBancaria {
     }
 
     public void sacar(double valorSaque) {
-        if (getStatusConta() == true) {
+        if (getStatusConta()) {
             setSaldoConta(getSaldoConta() - valorSaque);
         } else {
             System.out.println("Você precisa criar uma conta.");
@@ -108,7 +108,7 @@ public class ContaBancaria {
 
     public void pagarMensalidade() {
         double valorMensalidade;
-        if (getStatusConta() == true) {
+        if (getStatusConta()) {
             if (getTipoConta().equalsIgnoreCase("CC")) {
                 valorMensalidade = 12;
                 setSaldoConta(getSaldoConta() - valorMensalidade);
